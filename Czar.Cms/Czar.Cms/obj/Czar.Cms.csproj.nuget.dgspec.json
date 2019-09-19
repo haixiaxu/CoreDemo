@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj": {}
+  },
+  "projects": {
+    "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj",
+        "projectName": "Czar.Cms",
+        "projectPath": "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
