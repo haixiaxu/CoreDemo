@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Czar.Cms", "Czar.Cms\Czar.Cms.csproj", "{351B8D3B-2F9A-4A1A-90AA-5E0A1116DE2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Czar.Cms", "Czar.Cms\Czar.Cms.csproj", "{351B8D3B-2F9A-4A1A-90AA-5E0A1116DE2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountOwnerServer", "AccountOwnerServer\AccountOwnerServer.csproj", "{E5DA6C92-B824-4229-91BB-143BF6DE0284}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{351B8D3B-2F9A-4A1A-90AA-5E0A1116DE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{351B8D3B-2F9A-4A1A-90AA-5E0A1116DE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{351B8D3B-2F9A-4A1A-90AA-5E0A1116DE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DA6C92-B824-4229-91BB-143BF6DE0284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DA6C92-B824-4229-91BB-143BF6DE0284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DA6C92-B824-4229-91BB-143BF6DE0284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DA6C92-B824-4229-91BB-143BF6DE0284}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

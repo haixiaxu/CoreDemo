@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj": {}
+    "C:\\CodeManager\\CoreDemo\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj": {}
   },
   "projects": {
-    "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj": {
+    "C:\\CodeManager\\CoreDemo\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj",
+        "projectUniqueName": "C:\\CodeManager\\CoreDemo\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj",
         "projectName": "Czar.Cms",
-        "projectPath": "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj",
+        "projectPath": "C:\\CodeManager\\CoreDemo\\Czar.Cms\\Czar.Cms\\Czar.Cms.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\项目\\ProjectVisualStudio2019\\Demo\\CmsCoreDemo\\Code\\Czar.Cms\\Czar.Cms\\obj\\",
+        "outputPath": "C:\\CodeManager\\CoreDemo\\Czar.Cms\\Czar.Cms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -62,10 +62,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
