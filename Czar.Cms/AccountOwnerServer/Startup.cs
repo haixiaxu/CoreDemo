@@ -1,15 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using AccountOwnerServer.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using NLog;
 
 namespace AccountOwnerServer
 {
@@ -18,6 +16,8 @@ namespace AccountOwnerServer
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var path = Directory.GetCurrentDirectory();
+            LogManager.LoadConfiguration(String.Concat(path, "/Configs/nlog.config"));
         }
 
         public IConfiguration Configuration { get; }
@@ -25,9 +25,17 @@ namespace AccountOwnerServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.ConfigureCors();
+            services.ConfigureIISIntegration();
+            services.ConfigureLoggerService();
+            services.ConfigureSqlServerContext(Configuration);
+            services.ConfigureRepositoryWrapper();
+
             services.AddControllers();
+         
         }
 
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -37,6 +45,14 @@ namespace AccountOwnerServer
             }
 
             app.UseHttpsRedirection();
+            //启用对请求使用静态文件
+            app.UseStaticFiles();
+            app.UseCors("CorsPolicy");
+            //将代理标头转发到当前请求
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.All
+            });
 
             app.UseRouting();
 
