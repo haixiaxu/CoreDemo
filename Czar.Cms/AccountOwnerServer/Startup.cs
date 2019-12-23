@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using AccountOwnerServer.Extensions;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -30,7 +31,8 @@ namespace AccountOwnerServer
             services.ConfigureLoggerService();
             services.ConfigureSqlServerContext(Configuration);
             services.ConfigureRepositoryWrapper();
-
+            services.AddAutoMapper(typeof(Startup));
+            services.ConfigureSwagger();
             services.AddControllers();
          
         }
@@ -61,6 +63,11 @@ namespace AccountOwnerServer
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
         }
     }

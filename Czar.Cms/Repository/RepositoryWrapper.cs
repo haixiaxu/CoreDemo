@@ -9,6 +9,10 @@ namespace Repository
         private IOwnerRepository _ownerRepository;
         private IAccountRepository _accountRepository;
 
+        public RepositoryWrapper(RepositoryContext repositoryContext)
+        {
+            _repositoryContext = repositoryContext;
+        }
         public IOwnerRepository Owner
         {
             get
@@ -18,6 +22,7 @@ namespace Repository
                 return _ownerRepository;
             }
         }
+
 
         public IAccountRepository Account
         {

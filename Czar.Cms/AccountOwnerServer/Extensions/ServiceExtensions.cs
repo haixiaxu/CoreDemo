@@ -6,6 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using Microsoft.OpenApi.Models;
+using System;
+using System.Reflection;
+using System.IO;
 
 namespace AccountOwnerServer.Extensions
 {
@@ -69,6 +73,20 @@ namespace AccountOwnerServer.Extensions
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)
         {
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+        }
+        /// <summary>
+        /// 配置swagger
+        /// </summary>
+        /// <param name="services"></param>
+        public static void ConfigureSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "AccountOwner API", Version = "v1" });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+            });
         }
     }
 }

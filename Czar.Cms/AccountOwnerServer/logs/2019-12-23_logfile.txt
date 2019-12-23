@@ -1,0 +1,31 @@
+2019-12-23 09:25:18.6227 INFO Here is info message from the controller.
+2019-12-23 09:25:18.6744 DEBUG Here is debug message from the controller.
+2019-12-23 09:25:18.6744 WARN Here is warn message from the controller.
+2019-12-23 09:25:18.6744 ERROR Here is error message from the controller.
+2019-12-23 09:25:23.2549 INFO Here is info message from the controller.
+2019-12-23 09:25:23.2549 DEBUG Here is debug message from the controller.
+2019-12-23 09:25:23.2549 WARN Here is warn message from the controller.
+2019-12-23 09:25:23.2549 ERROR Here is error message from the controller.
+2019-12-23 09:25:23.9186 INFO Here is info message from the controller.
+2019-12-23 09:25:23.9207 DEBUG Here is debug message from the controller.
+2019-12-23 09:25:23.9207 WARN Here is warn message from the controller.
+2019-12-23 09:25:23.9207 ERROR Here is error message from the controller.
+2019-12-23 10:36:57.2960 INFO 从数据库返回所有所有者
+2019-12-23 10:53:30.7098 INFO 从数据库返回所有所有者
+2019-12-23 10:54:25.9769 INFO 从数据库返回所有所有者
+2019-12-23 10:55:40.0554 INFO 从数据库返回所有所有者
+2019-12-23 10:56:35.5067 INFO 从数据库返回所有所有者
+2019-12-23 11:11:49.2872 INFO 从数据库返回所有所有者
+2019-12-23 11:27:11.8688 INFO 从数据库返回所有所有者
+2019-12-23 11:27:11.9134 INFO 从数据库返回所有所有者
+2019-12-23 11:27:11.8688 INFO 从数据库返回所有所有者
+2019-12-23 11:27:11.9134 INFO 从数据库返回所有所有者
+2019-12-23 11:49:42.6959 INFO 从数据库返回所有所有者
+2019-12-23 11:50:04.2053 INFO 返回id为的所有者: 89035d83-ad8c-4059-9c55-d23f709111b9
+2019-12-23 14:32:12.2438 INFO 从数据库返回所有所有者
+2019-12-23 14:33:59.0457 INFO 返回id为的所有者: 0d0cebe0-a222-4a73-873f-7dac88a2bccf
+2019-12-23 14:34:14.6603 INFO 返回id为的所有者: 89035d83-ad8c-4059-9c55-d23f709111b9
+2019-12-23 14:48:14.3038 INFO 从数据库返回所有所有者
+2019-12-23 14:49:53.7943 INFO 从数据库返回所有所有者
+2019-12-23 15:03:23.2724 INFO 返回id为的所有者: 89035d83-ad8c-4059-9c55-d23f709111b9
+2019-12-23 15:57:53.5759 INFO 从数据库返回所有所有者

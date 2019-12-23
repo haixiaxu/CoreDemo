@@ -13,10 +13,11 @@ namespace Repository
     /// <typeparam name="T"></typeparam>
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected RepositoryContext RepositoryContext { get; set; }
+        private readonly RepositoryContext _repositoryContext;
+
         public RepositoryBase(RepositoryContext repositoryContext)
         {
-            RepositoryContext = repositoryContext;
+            _repositoryContext = repositoryContext;
         }
         /// <summary>
         /// 添加
@@ -24,7 +25,7 @@ namespace Repository
         /// <param name="entity"></param>
         public void Create(T entity)
         {
-             this.RepositoryContext.Set<T>().Add(entity);
+             this._repositoryContext.Set<T>().Add(entity);
         }
         /// <summary>
         /// 删除
@@ -32,7 +33,7 @@ namespace Repository
         /// <param name="entity"></param>
         public void Delete(T entity)
         {
-            this.RepositoryContext.Set<T>().Remove(entity);
+            this._repositoryContext.Set<T>().Remove(entity);
         }
         /// <summary>
         /// 查询所有
@@ -40,7 +41,7 @@ namespace Repository
         /// <returns></returns>
         public IQueryable<T> FindAll()
         {
-           return this.RepositoryContext.Set<T>().AsNoTracking();
+           return _repositoryContext.Set<T>().AsNoTracking();
         }
         /// <summary>
         /// 根据条件查询
@@ -49,7 +50,7 @@ namespace Repository
         /// <returns></returns>
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-           return this.RepositoryContext.Set<T>().Where(expression).AsNoTracking();
+           return this._repositoryContext.Set<T>().Where(expression).AsNoTracking();
         }
         /// <summary>
         /// 修改
@@ -57,7 +58,7 @@ namespace Repository
         /// <param name="entity"></param>
         public void Update(T entity)
         {
-            this.RepositoryContext.Set<T>().Update(entity);
+            this._repositoryContext.Set<T>().Update(entity);
         }
     }
 }

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
-namespace Entities.Models
+namespace Entities.Dto
 {
     /// <summary>
-    /// 所有者
+    /// 创建所有者Dto(数据传输对象)
     /// </summary>
-    [Table("Owner")]
-    public class Owner
+    public class OwnerForCreationDto
     {
-        [Column("OwnerId")]
-        public Guid Id { get; set; }
         /// <summary>
         /// 名称
         /// </summary>
@@ -31,7 +25,5 @@ namespace Entities.Models
         [Required(ErrorMessage = "地址是必填的")]
         [StringLength(100, ErrorMessage = "地址不能超过100个字符")]
         public string Address { get; set; }
-        public ICollection<Account> Accounts { get; set; }
-
     }
 }

@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AccountOwnerServer</name>
+    </assembly>
+    <members>
+        <member name="T:AccountOwnerServer.Controllers.OwnerController">
+            <summary>
+            所有者
+            </summary>
+        </member>
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="logger"></param>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.GetAllOwners">
+            <summary>
+            获取所有所得者
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.GetOwnerById(System.Guid)">
+            <summary>
+            根据查询编号查询所有者
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.CreateOwner(Entities.Dto.OwnerForCreationDto)">
+            <summary>
+            创建所有者
+            </summary>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.UpdateOwner(System.Guid,Entities.Dto.OwnerForUpdateDto)">
+            <summary>
+            更新所有者
+            </summary>
+            <param name="id"></param>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.DeleteOwner(System.Guid)">
+            <summary>
+            删除所有者
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AccountOwnerServer.Extensions.MappingProfile">
+            <summary>
+            /映射AutoMapper
+            </summary>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.MappingProfile.#ctor">
+            <summary>
+            创建映射
+            </summary>
+        </member>
+        <member name="T:AccountOwnerServer.Extensions.ServiceExtensions">
+            <summary>
+            服务扩展方法
+            </summary>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置Cors,Cors(跨资源共享)是一种机制,授予用户访问其他域中的服务器资源权限               
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureIISIntegration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置IIS集成, 不会初始化选项内的任何属性,因为可以使用默认值
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureLoggerService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置IOC容器添加记录器服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureSqlServerContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            配置数据库上下文服务
+            </summary>
+            <param name="services"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureRepositoryWrapper(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置仓储服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置swagger
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateDefaultBuilder（args）– ASP.NET Core使用它来配置应用程序配置，日志记录和依赖项注入容器
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
