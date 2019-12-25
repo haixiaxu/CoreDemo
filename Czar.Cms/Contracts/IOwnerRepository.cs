@@ -35,5 +35,11 @@ namespace Contracts
         /// </summary>
         /// <param name="owner"></param>
         void DeleteOwner(Owner owner);
+        /// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="ownerParameters"></param>
+        /// <returns></returns>
+        PagedList<Owner> GetOwners(OwnerParameters ownerParameters);
     }
 }

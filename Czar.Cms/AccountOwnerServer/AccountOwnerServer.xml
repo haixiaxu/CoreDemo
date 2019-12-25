@@ -17,7 +17,7 @@
             <param name="repository"></param>
             <param name="mapper"></param>
         </member>
-        <member name="M:AccountOwnerServer.Controllers.OwnerController.GetAllOwners">
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.GetOwners(Entities.Models.OwnerParameters)">
             <summary>
             获取所有所得者
             </summary>
@@ -110,6 +110,19 @@
             </summary>
             <param name="args"></param>
             <returns></returns>
+        </member>
+        <member name="M:AccountOwnerServer.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置应用所需的服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AccountOwnerServer.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            定义请求处理管道
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>

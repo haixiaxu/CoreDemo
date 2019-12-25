@@ -5,6 +5,7 @@ using Contracts;
 using Entities.Dto;
 using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace AccountOwnerServer.Controllers
 {
@@ -31,16 +32,25 @@ namespace AccountOwnerServer.Controllers
             _mapper = mapper;
         }
         /// <summary>
-        /// 获取所有所得者
+        /// 分页获取所得者
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult GetAllOwners()
+        public IActionResult GetOwners([FromQuery] OwnerParameters ownerParameters)
         {
-            var owners = _repository.Owner.GetAllOwners();
-            var ownerResult = _mapper.Map<IEnumerable<OwnerDto>>(owners);
-            _logger.LogInfo("从数据库返回所有所有者");
-            return Ok(ownerResult);
+            var owners = _repository.Owner.GetOwners(ownerParameters);
+            var metadata = new 
+            { 
+                owners.TotalCount,
+                owners.PageSize,
+                owners.CurrentPage,
+                owners.TotalPages,
+                owners.HasNext,
+                owners.HasPrevious
+            };
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+            _logger.LogInfo($"返回{owners.TotalCount}数据库中的所有者");
+            return Ok(owners);
         }
         /// <summary>
         /// 根据查询编号查询所有者

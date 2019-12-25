@@ -23,7 +23,10 @@ namespace AccountOwnerServer
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// 配置应用所需的服务
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureCors();
@@ -34,11 +37,15 @@ namespace AccountOwnerServer
             services.AddAutoMapper(typeof(Startup));
             services.ConfigureSwagger();
             services.AddControllers();
-         
+
         }
 
-        
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
+        /// <summary>
+        /// 定义请求处理管道
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -68,6 +75,8 @@ namespace AccountOwnerServer
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                //在应用的根 (http://localhost:<port>/) 处提供 Swagger UI，请将 RoutePrefix 属性设置为空字符串：
+                options.RoutePrefix = string.Empty;
             });
         }
     }

@@ -38,6 +38,12 @@ namespace Repository
             return FindByCondition(c => c.Id.Equals(ownerId)).FirstOrDefault();
         }
 
+        public PagedList<Owner> GetOwners(OwnerParameters ownerParameters)
+        {
+            var result = PagedList<Owner>.ToPagedList(FindAll().OrderBy(c => c.Name), ownerParameters.PageNumber, ownerParameters.PageSize);
+            return result;
+        }
+
         public void UpdateOwner(Owner owner)
         {
             Update(owner);
