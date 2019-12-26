@@ -38,6 +38,10 @@ namespace AccountOwnerServer.Controllers
         [HttpGet]
         public IActionResult GetOwners([FromQuery] OwnerParameters ownerParameters)
         {
+            if(!ownerParameters.ValidYearRange)
+            {
+                return BadRequest("最大出生年份不能小于最小出生年份");
+            }
             var owners = _repository.Owner.GetOwners(ownerParameters);
             var metadata = new 
             { 

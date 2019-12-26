@@ -10,6 +10,8 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Reflection;
 using System.IO;
+using Entities.Models;
+using Entities.Helper;
 
 namespace AccountOwnerServer.Extensions
 {
@@ -67,11 +69,13 @@ namespace AccountOwnerServer.Extensions
 
         }
         /// <summary>
-        /// 配置仓储服务
+        /// 配置仓储依赖注入服务
         /// </summary>
         /// <param name="services"></param>
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)
         {
+            services.AddScoped<ISortHelper<Owner>, SortHelper<Owner>>();
+            services.AddScoped<ISortHelper<Account>, SortHelper<Account>>();
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
         /// <summary>

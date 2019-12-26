@@ -19,7 +19,7 @@
         </member>
         <member name="M:AccountOwnerServer.Controllers.OwnerController.GetOwners(Entities.Models.OwnerParameters)">
             <summary>
-            获取所有所得者
+            分页获取所得者
             </summary>
             <returns></returns>
         </member>
@@ -94,7 +94,7 @@
         </member>
         <member name="M:AccountOwnerServer.Extensions.ServiceExtensions.ConfigureRepositoryWrapper(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
-            配置仓储服务
+            配置仓储依赖注入服务
             </summary>
             <param name="services"></param>
         </member>

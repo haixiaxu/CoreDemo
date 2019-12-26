@@ -19,5 +19,14 @@
                 _pageSize = (value > maxPageSize) ? maxPageSize : value;
             }
         }
+        /// <summary>
+        /// 排序
+        /// </summary>
+        public string OrderBy { get; set; }
+        /// <summary>
+        /// 领域
+        /// </summary>
+        public string Fields  { get; set; }
+
     }
 }

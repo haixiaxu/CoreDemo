@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities;
+using Entities.Helper;
 using Entities.Models;
 
 namespace Repository
@@ -9,9 +10,11 @@ namespace Repository
     /// </summary>
     public  class AccountRepository:RepositoryBase<Account>,IAccountRepository
     {
-        public AccountRepository(RepositoryContext repositoryContext):base(repositoryContext)
-        {
+        private readonly ISortHelper<Account> _sortHelper;
 
+        public AccountRepository(RepositoryContext repositoryContext,ISortHelper<Account> sortHelper):base(repositoryContext)
+        {
+            _sortHelper = sortHelper;
         }
     }
 }
