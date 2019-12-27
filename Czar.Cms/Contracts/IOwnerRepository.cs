@@ -3,6 +3,7 @@ using Entities.Helper;
 using Entities.Models;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Contracts
 {
@@ -42,6 +43,7 @@ namespace Contracts
         /// </summary>
         /// <param name="ownerParameters"></param>
         /// <returns></returns>
-        PagedList<Owner> GetOwners(OwnerParameters ownerParameters);
+        PagedList<Entity> GetOwners(OwnerParameters ownerParameters);
+        Entity GetOwnerById(Guid ownerId, string fields);
     }
 }

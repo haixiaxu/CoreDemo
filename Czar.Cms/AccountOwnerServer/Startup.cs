@@ -36,6 +36,12 @@ namespace AccountOwnerServer
             services.ConfigureRepositoryWrapper();
             services.AddAutoMapper(typeof(Startup));
             services.ConfigureSwagger();
+            services.AddControllers(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+                options.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters()
+            .AddNewtonsoftJson();
             services.AddControllers();
 
         }

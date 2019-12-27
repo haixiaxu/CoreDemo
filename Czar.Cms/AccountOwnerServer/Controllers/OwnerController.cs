@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using AutoMapper;
 using Contracts;
 using Entities.Dto;
@@ -62,10 +63,10 @@ namespace AccountOwnerServer.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}",Name ="OwnerById")]
-        public IActionResult GetOwnerById(Guid id)
+        public IActionResult GetOwnerById(Guid id,[FromQuery] string fields)
         {
-            var owner = _repository.Owner.GetOwnerById(id);
-            if (owner == null)
+            var owner = _repository.Owner.GetOwnerById(id,fields);
+            if (owner == default(Entity))
             {
                 _logger.LogError($"所有者id为: {id}, 在数据库中找不到.");
                 return NotFound();

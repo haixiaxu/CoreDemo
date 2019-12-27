@@ -7,24 +7,26 @@ namespace Repository
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
+        private readonly IDataShaper<Owner> _ownerDataShaper;
         private  ISortHelper<Owner> _ownerSortHelper;
         private  ISortHelper<Account> _accountsortHelper;
         private RepositoryContext _repositoryContext;
         private IOwnerRepository _ownerRepository;
         private IAccountRepository _accountRepository;
 
-        public RepositoryWrapper(RepositoryContext repositoryContext,ISortHelper<Owner> ownerSortHelper,ISortHelper<Account> accountSortHelper)
+        public RepositoryWrapper(RepositoryContext repositoryContext,ISortHelper<Owner> ownerSortHelper,ISortHelper<Account> accountSortHelper,IDataShaper<Owner> ownerDataShaper)
         {
             _repositoryContext = repositoryContext;
             _ownerSortHelper = ownerSortHelper;
             _accountsortHelper = accountSortHelper;
+            _ownerDataShaper = ownerDataShaper;
         }
         public IOwnerRepository Owner
         {
             get
             {
                 if (_ownerRepository == null)
-                    _ownerRepository = new OwnerRepository(_repositoryContext,_ownerSortHelper);
+                    _ownerRepository = new OwnerRepository(_repositoryContext,_ownerSortHelper,_ownerDataShaper);
                 return _ownerRepository;
             }
         }

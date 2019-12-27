@@ -23,7 +23,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AccountOwnerServer.Controllers.OwnerController.GetOwnerById(System.Guid)">
+        <member name="M:AccountOwnerServer.Controllers.OwnerController.GetOwnerById(System.Guid,System.String)">
             <summary>
             根据查询编号查询所有者
             </summary>

@@ -1,11 +1,11 @@
-﻿using Contracts;
+﻿using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 
-namespace Repository
+namespace Entities.Helper
 {
     public class DataShaper<T> : IDataShaper<T>
     {
@@ -15,13 +15,13 @@ namespace Repository
             //重写搜索当前包含公共成员或者实例成员
             Properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
         }
-        public ExpandoObject ShapeData(T entity, string fieldsString)
+        public Entity ShaperData(T entity, string fieldsString)
         {
             var requiredProperties = GetRequiredProperties(fieldsString);
             return FetchDataForEntity(entity, requiredProperties);
         }
 
-        public IEnumerable<ExpandoObject> ShaperData(IEnumerable<T> entitys, string fieldsString)
+        public IEnumerable<Entity> ShaperData(IEnumerable<T> entitys, string fieldsString)
         {
             var requiredProperties = GetRequiredProperties(fieldsString);
             return FetchData(entitys, requiredProperties);
@@ -61,9 +61,9 @@ namespace Repository
         /// <param name="entitys"></param>
         /// <param name="requiredProperties"></param>
         /// <returns></returns>
-        private IEnumerable<ExpandoObject> FetchData(IEnumerable<T> entitys, IEnumerable<PropertyInfo> requiredProperties)
+        private IEnumerable<Entity> FetchData(IEnumerable<T> entitys, IEnumerable<PropertyInfo> requiredProperties)
         {
-            var shapedData = new List<ExpandoObject>();
+            var shapedData = new List<Entity>();
             foreach (var entity in entitys)
             {
                 var shapedObject = FetchDataForEntity(entity, requiredProperties);
@@ -77,9 +77,9 @@ namespace Repository
         /// <param name="entity">实体</param>
         /// <param name="requiredProperties"></param>
         /// <returns></returns>
-        private ExpandoObject FetchDataForEntity(T entity,IEnumerable<PropertyInfo> requiredProperties)
+        private Entity FetchDataForEntity(T entity, IEnumerable<PropertyInfo> requiredProperties)
         {
-            var shapedObject = new ExpandoObject();
+            var shapedObject = new Entity();
             foreach (var property in requiredProperties)
             {
                 //使用反射,提取值

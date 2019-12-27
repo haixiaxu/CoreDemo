@@ -76,7 +76,10 @@ namespace AccountOwnerServer.Extensions
         {
             services.AddScoped<ISortHelper<Owner>, SortHelper<Owner>>();
             services.AddScoped<ISortHelper<Account>, SortHelper<Account>>();
+            services.AddScoped<IDataShaper<Owner>, DataShaper<Owner>>();
+
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+
         }
         /// <summary>
         /// 配置swagger
