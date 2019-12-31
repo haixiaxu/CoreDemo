@@ -37,6 +37,8 @@ namespace AccountOwnerServer.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
         public IActionResult GetOwners([FromQuery] OwnerParameters ownerParameters)
         {
             if(!ownerParameters.ValidYearRange)
